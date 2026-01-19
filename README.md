@@ -10,7 +10,7 @@ The pipeline automatically processes files uploaded to S3, stores data in Dynamo
 
 ## Architecture
 
-![Architecture Diagram](assets/event_driven_architecture-diagram.png)
+![Architecture Diagram](assets/event_driven_architecture_diagram.png)
 
 S3: Receives uploaded JSON files.
 Lambda: Processes files and inserts records into DynamoDB.

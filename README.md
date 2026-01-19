@@ -1,5 +1,8 @@
 # Project 3: AWS Serverless Event Pipeline
 
+[![Deploy](https://github.com/SreekuttanCL/cloud-portfolio-aws/actions/workflows/deploy.yml/badge.svg)](https://github.com/SreekuttanCL/cloud-portfolio-aws/actions/workflows/deploy.yml)
+[![Terraform](https://img.shields.io/badge/Terraform-v1.14.3-blue?logo=terraform&logoColor=white)](https://www.terraform.io/)
+
 This project implements a **serverless data pipeline** on AWS using **Terraform**.  
 The pipeline automatically processes files uploaded to S3, stores data in DynamoDB, and handles errors with an SQS Dead Letter Queue (DLQ) and CloudWatch alarms.
 
@@ -7,19 +10,8 @@ The pipeline automatically processes files uploaded to S3, stores data in Dynamo
 
 ## Architecture
 
-```
-S3 Bucket (Uploads)
-       |
-       v
-   Lambda Function
-       |
-       v
- DynamoDB Table
-       |
-       +--> CloudWatch Alarms (Errors)
-       |
-       +--> Dead Letter Queue (SQS DLQ)
-```
+![Architecture Diagram](assets/event_driven_architecture-diagram.png)
+
 S3: Receives uploaded JSON files.
 Lambda: Processes files and inserts records into DynamoDB.
 DynamoDB: Stores processed event data.

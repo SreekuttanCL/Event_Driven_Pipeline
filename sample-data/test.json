@@ -1,0 +1,11 @@
+{
+  "source": "pipeline-project-3",
+  "uploaded_by": "terraform-lambda-test",
+  "timestamp": "2026-01-18T12:00:00Z",
+  "payload": {
+    "message": "This file is used to trigger S3 -> Lambda -> DynamoDB pipeline",
+    "environment": "dev",
+    "version": "1.0"
+  }
+}
+

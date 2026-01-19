@@ -57,15 +57,23 @@ AWS CLI configured with a profile that has permissions for Lambda, S3, DynamoDB,
 aws configure --profile project3
 ## Setup & Deployment
 ## 1️⃣ Initialize Terraform
-```terraform init```
+```
+terraform init
+```
 ## 2️⃣ Plan the infrastructure
-```terraform plan -var-file="terraform.tfvars"```
+```
+terraform plan -var-file="terraform.tfvars"
+```
 ## 3️⃣ Apply the infrastructure
-```terraform apply -var-file="terraform.tfvars"```
+```
+terraform apply -var-file="terraform.tfvars"
+```
 This creates S3 bucket, Lambda function, DynamoDB table, SQS DLQ, and CloudWatch alarms.
 ## Testing the Pipeline
 Upload a sample JSON file to the S3 bucket:
-```aws s3 cp sample-data/test.json s3://<your-bucket-name>/```
+```
+aws s3 cp sample-data/test.json s3://<your-bucket-name>/
+```
 Check Lambda logs in CloudWatch:
 ```
 aws logs get-log-events \
@@ -74,7 +82,9 @@ aws logs get-log-events \
 ```
 Verify DynamoDB contains the inserted items.
 ## Destroying Infrastructure
-```terraform destroy -var-file="terraform.tfvars"```
+```
+terraform destroy -var-file="terraform.tfvars"
+```
 Note: If the S3 bucket is not empty, Terraform will fail. Use force_destroy = true in the bucket resource to automatically delete all objects.
 ## Terraform Best Practices
 Use modules for reusable resources (S3, Lambda, DynamoDB).
